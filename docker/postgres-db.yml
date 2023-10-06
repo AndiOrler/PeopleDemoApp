@@ -1,0 +1,37 @@
+version: '2.7'
+services:
+  db:
+    container_name: postgres_db
+    image: postgres:15.4-alpine3.17
+    env_file: ../.env    
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    env_file: ../.env
+    logging:
+      driver: none
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "8081:80"
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+    networks:
+      - internal
+
+volumes:
+  pgdata: {}
+
+networks:
+  internal:
