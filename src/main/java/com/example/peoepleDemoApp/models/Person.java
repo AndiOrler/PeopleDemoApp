@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "people")
 public class Person {
+
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -78,6 +80,15 @@ public class Person {
 
     public void setCarOwner(boolean carOwner) {
         this.carOwner = carOwner;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Person person = (Person) obj;
+        return firstName == person.firstName && lastName == person.lastName && birthday == person.birthday;
     }
 
 }
