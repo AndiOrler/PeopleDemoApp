@@ -10,28 +10,14 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - peopleDemoApp_pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     networks:
       - internal
 
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    env_file: ../.env
-    logging:
-      driver: none
-    restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-    ports:
-      - "8081:80"
-    volumes:
-      - ./servers.json:/pgadmin4/servers.json
-    networks:
-      - internal
 
 volumes:
-  peopleDemoApp_pgdata: {}
+  pgdata: {}
+
 
 networks:
   internal:

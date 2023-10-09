@@ -1,0 +1,24 @@
+version: '2.7'
+services:
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    env_file: ../.env
+    logging:
+      driver: none
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "8081:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - internal
+
+volumes:
+  pgadmin_data: {}
+
+
+networks:
+  internal:
