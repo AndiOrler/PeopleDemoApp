@@ -30,16 +30,12 @@ help:
 	@echo "Make cmd's "
 	@echo "- stop                               stop docker db containers"
 	@echo "- docker                             build and run postgres db and pgAdmin cotainer"
+	@echo "- run_app                            run spring boot app"
 	@echo " "
-
-
-foo:
-	@echo "Hello from foo"
 
 
 stop:
 	- docker compose $(DOCKER_DB_CONTAINERS) -p people-demo down -t 2
-
 
 
 .PHONY: docker
@@ -54,4 +50,3 @@ docker:
 run_app:
 	- mvn spring-boot:run
 
-all: docker run_app
