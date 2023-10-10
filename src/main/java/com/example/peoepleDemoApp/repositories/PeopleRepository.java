@@ -12,6 +12,4 @@ public interface PeopleRepository extends CrudRepository<Person, Long> {
 
     List<Person> findAll();
 
-    Person findById(long id);
-
 }
