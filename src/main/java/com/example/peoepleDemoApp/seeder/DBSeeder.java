@@ -1,5 +1,8 @@
 package com.example.peoepleDemoApp.seeder;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,7 +29,8 @@ public class DBSeeder {
 
     @EventListener
     public void seed(ContextRefreshedEvent event) {
-        seed();
+        seedFromFile();
+        seedFromCode();
     }
 
     String[] firstNames = {
@@ -96,7 +100,35 @@ public class DBSeeder {
             "Schlossallee"
     };
 
-    public void seed() {
+    public void seedFromFile() {
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("./seeder/seed.csv"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Split the line into fields (e.g., ID and Name)
+                String[] parts = line.split(",");
+                if (parts.length == 2) {
+                    int id = Integer.parseInt(parts[0]);
+                    String name = parts[1].trim();
+                    Person entity = new Person();
+                    entity.setFirstName(randValFromArr(firstNames));
+                    entity.setLastName(randValFromArr(lastNames));
+                    entity.setBirthday(randBirthday());
+                    entity.setCarOwner(false);
+                    entity.setCity(randValFromArr(cities));
+                    entity.setStreet(randValFromArr(germanStreetNames) + " " + randNo(1, 200));
+                    newPeople.add(entity);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // return entityList;
+
+    }
+
+    public void seedFromCode() {
 
         List<Person> allPeople = repo.findAll();
 
