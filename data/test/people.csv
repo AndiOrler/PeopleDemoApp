@@ -1,0 +1,63 @@
+firstName,lastName,birthday,street,city,carOwner
+John,Doe,1990-05-15,123 Main St,New York,true
+Jane,Smith,1985-12-10,456 Elm St,Los Angeles,false
+Michael,Johnson,1982-08-25,789 Oak St,Chicago,true
+Emily,Williams,1995-04-03,101 Pine St,San Francisco,false
+David,Brown,1978-11-30,202 Maple St,Houston,true
+Sarah,Davis,1987-07-20,303 Birch St,Miami,false
+James,Miller,1992-03-14,404 Cedar St,Boston,true
+Mary,Anderson,1980-09-05,505 Redwood St,Philadelphia,false
+Robert,Wilson,1998-01-18,606 Spruce St,Phoenix,true
+Linda,Jackson,1976-06-22,707 Sequoia St,San Diego,false
+William,Harris,1989-10-08,808 Red Oak St,Dallas,true
+Patricia,Martin,1984-12-02,909 White Oak St,Austin,false
+Richard,Thompson,1997-02-24,1010 Green St,San Antonio,true
+Susan,Garcia,1975-05-16,1111 Blue St,Denver,false
+Charles,Martinez,1981-08-04,1212 Yellow St,Seattle,true
+Eleanor,Moore,1993-06-28,1313 Orange St,Atlanta,true
+Thomas,Hall,1983-09-14,1414 Purple St,New Orleans,false
+Margaret,Young,1979-11-07,1515 Brown St,Las Vegas,true
+Joseph,Walker,1994-04-19,1616 Black St,Orlando,false
+Nancy,Lewis,1986-07-31,1717 Pink St,Milwaukee,true
+Daniel,Perez,1980-10-12,1818 Gray St,Raleigh,false
+Karen,Turner,1990-12-06,1919 Silver St,Tucson,true
+Edward,Hall,1977-03-22,2020 Gold St,Minneapolis,false
+Lisa,Martinez,1996-01-26,2121 Copper St,Portland,true
+George,Young,1978-05-09,2222 Bronze St,Columbus,false
+Betty,Moore,1991-07-15,2323 Brass St,Indianapolis,true
+Kevin,Wilson,1985-09-30,2424 Aluminum St,Charlotte,false
+Dorothy,Adams,1976-12-24,2525 Steel St,San Jose,true
+Brian,Harris,1998-03-07,2626 Titanium St,Oklahoma City,false
+Ruth,King,1982-05-29,2727 Iron St,Detroit,true
+Ronald,Hill,1997-08-11,2828 Platinum St,Memphis,true
+Sandra,Scott,1980-10-23,2929 Copper St,San Francisco,false
+Steven,Green,1975-01-12,3030 Gold St,Denver,true
+Cynthia,Barnes,1995-04-03,3131 Silver St,Seattle,false
+Kenneth,Parker,1983-06-17,3232 Bronze St,Boston,true
+Amy,Edwards,1989-09-21,3333 Aluminum St,Phoenix,false
+Jerry,Ward,1978-11-15,3434 Titanium St,Los Angeles,true
+Angela,Turner,1990-01-31,3535 Steel St,Chicago,false
+Frank,Gonzalez,1987-03-25,3636 Iron St,Miami,true
+Beverly,White,1992-05-09,3737 Brass St,Dallas,false
+Timothy,Harris,1976-07-12,3838 Copper St,Houston,true
+Shirley,Thomas,1984-09-29,3939 Platinum St,New York,false
+Bobby,Young,1998-12-02,4040 Gold St,Los Angeles,true
+Debra,Robinson,1981-02-14,4141 Silver St,Chicago,false
+Brandon,Nelson,1979-04-05,4242 Bronze St,San Francisco,true
+Carol,Wood,1993-06-28,4343 Aluminum St,Philadelphia,false
+Gregory,Allen,1988-09-20,4444 Titanium St,Miami,true
+Teresa,King,1997-01-13,4545 Steel St,Boston,false
+Roy,Johnson,1982-03-06,4646 Iron St,Phoenix,true
+Mildred,Carter,1974-04-27,4747 Brass St,Los Angeles,false
+Lawrence,Garcia,1991-07-21,4848 Copper St,New York,true
+Ann,Collins,1985-10-04,4949 Platinum St,Chicago,false
+Randy,Bennett,1977-11-28,5050 Gold St,San Francisco,true
+Kathleen,Watson,1994-01-23,5151 Silver St,Houston,false
+Jesse,Hall,1980-03-15,5252 Bronze St,Philadelphia,true
+Gloria,Murphy,1998-05-08,5353 Aluminum St,Dallas,false
+Nicholas,Richardson,1989-07-30,5454 Titanium St,Atlanta,true
+Wanda,Flores,1983-09-11,5555 Steel St,Seattle,false
+Dennis,Morgan,1976-12-05,5656 Iron St,Denver,true
+Martha,Rivera,1992-02-18,5757 Brass St,New Orleans,false
+Albert,Reed,1981-04-01,5858 Copper St,Orlando,true
+Pamela,Turner,1995-06-24,5959 Platinum St,Minneapolis,false
