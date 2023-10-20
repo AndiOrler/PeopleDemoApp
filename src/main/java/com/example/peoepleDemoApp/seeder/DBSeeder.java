@@ -30,7 +30,7 @@ public class DBSeeder {
     @EventListener
     public void seed(ContextRefreshedEvent event) {
         seedFromFile();
-        seedFromCode();
+        // seedFromCode();
     }
 
     String[] firstNames = {
@@ -102,30 +102,50 @@ public class DBSeeder {
 
     public void seedFromFile() {
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("./seeder/seed.csv"))) {
+        List<Person> allPeople = repo.findAll();
+
+        if (allPeople.size() > 0) {
+            System.out.println("DBSeeder - already seeded");
+            return;
+        }
+
+        System.out.println("DBSeeder - start seeding");
+
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader("src/main/java/com/example/peoepleDemoApp/seeder/seed.csv"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 // Split the line into fields (e.g., ID and Name)
                 String[] parts = line.split(",");
-                if (parts.length == 2) {
-                    int id = Integer.parseInt(parts[0]);
-                    String name = parts[1].trim();
+                if (parts.length == 6) {
+                    String firstName = parts[0].trim();
+                    String lastName = parts[1].trim();
+                    String birthday = parts[2].trim();
+                    String sreet = parts[3].trim();
+                    String city = parts[4].trim();
+                    String carOwner = parts[5].trim();
+
                     Person entity = new Person();
-                    entity.setFirstName(randValFromArr(firstNames));
-                    entity.setLastName(randValFromArr(lastNames));
-                    entity.setBirthday(randBirthday());
-                    entity.setCarOwner(false);
-                    entity.setCity(randValFromArr(cities));
-                    entity.setStreet(randValFromArr(germanStreetNames) + " " + randNo(1, 200));
+                    entity.setFirstName(firstName);
+                    entity.setLastName(lastName);
+                    entity.setBirthday(birthday);
+                    entity.setStreet(sreet);
+                    entity.setCity(city);
+                    entity.setCarOwner(Boolean.parseBoolean(carOwner));
+
                     newPeople.add(entity);
+
                 }
+
             }
+            
+            repo.saveAll(newPeople);
+            System.out.println("DBSeeder - seeding successful");
+
         } catch (IOException e) {
+            System.out.println("DBSeeder - seeding from file failed");
             e.printStackTrace();
         }
-
-        // return entityList;
-
     }
 
     public void seedFromCode() {
